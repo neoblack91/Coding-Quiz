@@ -64,8 +64,8 @@ var questions = [
 function renderQuestion(){
     test = get("test");
     if(pos >= questions.length){
-      test.innerHTML = "<h3>You got "+correct+" of "+questions.length+" questions correct</h3>";
-      get("test_status").innerHTML = "Test completed";
+      test.innerHTML = "<h3>You got "+correct+" of "+questions.length+" questions correct!!</h3>";
+      get("test_status").innerHTML = "Test completed!!";
       // resets the variable to allow users to restart the test
       pos = 0;
       correct = 0;
@@ -113,6 +113,7 @@ window.addEventListener("load", renderQuestion);
 
 
 // set timer
+var timeleft = 180
 document.getElementById("btn").addEventListener("click", function(){
 var downloadtimer = setInterval(function timer(){
     document.getElementById("counter").innerHTML = timeleft + "seconds remaining";
