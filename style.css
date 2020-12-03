@@ -25,6 +25,16 @@ h2{
     text-align: right;
     }
 
+h3{
+        font-size: 3.4rem;
+        color: black;
+        margin-top: 5rem;
+        }
+h4{
+    font-size: 1.4rem;
+    color: black;
+}
+
 .container{
 width: 100vw;
 height: 50vh;
