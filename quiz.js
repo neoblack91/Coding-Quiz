@@ -114,9 +114,11 @@ window.addEventListener("load", renderQuestion);
 
 // set timer
 var timeleft = 180
+var timeDeduction= 15
+
 document.getElementById("btn").addEventListener("click", function(){
 var downloadtimer = setInterval(function timer(){
-    document.getElementById("counter").innerHTML = timeleft + "seconds remaining";
+    document.getElementById("timer").innerHTML = timeleft + "seconds remaining";
 
         timeleft-=1;
             if (timeleft <=0 ){
@@ -126,3 +128,11 @@ var downloadtimer = setInterval(function timer(){
         }, 3000);
 
 });
+
+// storage quiz scores
+var initials = document.querySelector("#initials");
+var score = document.querySelector("#Score");
+
+score = test.innerHTML;
+
+
