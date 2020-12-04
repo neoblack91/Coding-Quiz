@@ -1,8 +1,11 @@
 var pos = 0;
 var correct = 0;
 var test, test_status, question, choice, choices, chA, chB, chC, chD;
-const Btn = document.getElementById("Btn");
+
 const timer = document.getElementById("timer");
+var startBtn = document.getElementById("Start")
+
+console.log("Start button", startBtn)
 
 var questions = [
     {
@@ -52,16 +55,24 @@ var questions = [
         c: "background-repeat",
         d: "background-position",
         answer: "A"
-      },
-      
-    ];
-
-    function get(x){
-        return document.getElementById(x);
       }
+      
+];
+
+function get(x){
+        return document.getElementById(x);
+    }
 
 // this function renders a question for display on the page
 function renderQuestion(){
+    
+document.getElementById("test").innerHTML==""
+
+
+
+
+
+
     test = get("test");
     if(pos >= questions.length){
       test.innerHTML = "<h3>You got "+correct+" of "+questions.length+" questions correct!!</h3>";
@@ -116,16 +127,19 @@ window.addEventListener("load", renderQuestion);
 var timeleft = 180
 var timeDeduction= 15
 
-document.getElementById("btn").addEventListener("click", function(){
-var downloadtimer = setInterval(function timer(){
+startBtn.addEventListener("click", function(){
+    console.log("did i click this")
+var downloadtimer = setInterval(function timer(){ 
+    console.log("is the timer working")
+    timeleft--;
     document.getElementById("timer").innerHTML = timeleft + "seconds remaining";
 
-        timeleft-=1;
+       
             if (timeleft <=0 ){
                 clearInterval(downloadtimer);
                 Document.getElementById("counter").innerHTML = "AWW time done!!"
             }
-        }, 3000);
+        }, 1000);
 
 });
 
@@ -134,5 +148,6 @@ var initials = document.querySelector("#initials");
 var score = document.querySelector("#Score");
 
 score = test.innerHTML;
+startBtn.innerHTML
 
 
